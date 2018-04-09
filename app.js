@@ -30,4 +30,4 @@ app
 		console.log(`Server running at http://localhost:${port}/`)
 	})
 
-mdoule.exports = app
+module.exports = app
