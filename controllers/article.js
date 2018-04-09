@@ -21,7 +21,7 @@ exports.createArticle = async ctx => {
   })
 
   try {
-	  let newArticle = await article.save()
+    let newArticle = await article.save()
     ctx.body = { message: 'Article created!' }
 
   } catch(err) {
@@ -55,7 +55,7 @@ exports.updateArticle = async ctx => {
     let article = await Article.findByIdAndUpdate(id, { title: body.title }, { new: true })
 
     if (!article)
-      ctx.body = { error: 'No task with the given ID' }
+      ctx.body = { error: 'No article with the given ID' }
     else
       ctx.body = { message: 'Article updated!' }
 
@@ -72,7 +72,7 @@ exports.deleteArticle = async ctx => {
     let article = await Article.findByIdAndRemove(id)
 
     if (!article)
-      ctx.body = { error: 'No task with the given ID' }
+      ctx.body = { error: 'No article with the given ID' }
     else
       ctx.body = { message: 'Article deleted!' }
 
